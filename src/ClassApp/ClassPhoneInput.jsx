@@ -1,0 +1,62 @@
+import React, { Component, createRef } from "react";
+
+export class ClassPhoneInput extends Component {
+  render() {
+    const { labelText, phoneNumberInput, createOnChangehandler } = this.props;
+    const refs = [
+      createRef(null),
+      createRef(null),
+      createRef(null),
+      createRef(null),
+    ];
+    const ref0 = refs[0];
+    const ref1 = refs[1];
+    const ref2 = refs[2];
+    const ref3 = refs[3];
+  
+    
+    return (
+      <div className="input-wrap">
+      <label htmlFor="phone">{labelText}</label>
+      <div id="phone-input-wrap">
+        <input
+          type="number"
+          id="phone-input-1"
+          placeholder="55"
+          value={phoneNumberInput[0]}
+          onChange={createOnChangehandler(0)}
+          ref={ref0}
+        />
+        -
+        <input
+          type="number"
+          id="phone-input-2"
+          placeholder="55"
+          value={phoneNumberInput[1]}
+          onChange={createOnChangehandler(1)}
+          ref={ref1}
+        />
+        -
+        <input
+          type="number"
+          id="phone-input-3"
+          placeholder="55"
+          value={phoneNumberInput[2]}
+          onChange={createOnChangehandler(2)}
+          ref={ref2}
+        />
+        -
+        <input
+          type="number"
+          id="phone-input-4"
+          placeholder="5"
+          value={phoneNumberInput[3]}
+          onChange={createOnChangehandler(3)}
+          ref={ref3}
+        />
+      </div>
+    </div>
+    );
+  } 
+}
+
